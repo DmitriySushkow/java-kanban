@@ -1,27 +1,48 @@
+package Tasks;
+
 import java.util.Objects;
 
 public class Task {
-
-    String name;
-    String description;
+    private String name;
+    private String description;
     private int id;
     private TaskStatus status;
 
-    public Task() {}
     public Task(String name, String description) {
         this.name = name;
         this.description = description;
-    } // Для создания
-    public Task(String name, String description, int id, TaskStatus status) {
+        this.status = TaskStatus.NEW;
+    }
+
+    public Task() {
+        /*
+        В комментариях ты указал, что не стоит создавать пустой конструктор. Но, почему-то, без его создания
+        Идея не позволяет мне сделать классы наследники. Не знаю почему, но выдаётся сообщение:
+        There is no parameterless constructor available in 'Tasks.Task'.
+        Поэтому я его и оставил.
+         */
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
         this.description = description;
-        this.setId(id);
-        this.setStatus(status);
-    } // Для теста
+    }
 
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -29,6 +50,7 @@ public class Task {
     public TaskStatus getStatus() {
         return status;
     }
+
     public void setStatus(TaskStatus status) {
         this.status = status;
     }
@@ -45,6 +67,12 @@ public class Task {
                 Objects.equals(description, task.description) &&
                 Objects.equals(status, task.status);
     }
+
+    @Override
+    public int hashCode() {
+        return 31 * Objects.hash(name, description, id, status);
+    }
+
     @Override
     public String toString() {
         return "NAME: '" + name + "' ID: '" + id + "' STATUS: '" + status + "'\nDESCRIPTION: '" + description + "'\n";
