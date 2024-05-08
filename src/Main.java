@@ -1,12 +1,24 @@
 /*
-Привет! Исправил проект по твоим комментариям. Наджеюсь теперь всё в порядке.
+Привет! Внёс правки по новым комментариям =)
+A____A
+|・ㅅ・| Meow
+|っ　ｃ|
+|　　　|
+|　　　|
+|　　　|
+|　　　|
+|　　　|
+|　　　|
+|　　　|
+|　　　| Хорошей проверки и праздников! :3
+U￣ ￣U
  */
 
-import TaskManager.TaskManager;
-import Tasks.Epic;
-import Tasks.SubTask;
-import Tasks.Task;
-import Tasks.TaskStatus;
+import manager.TaskManager;
+import tasks.Epic;
+import tasks.SubTask;
+import tasks.Task;
+import tasks.TaskStatus;
 
 public class Main {
     public static void main(String[] args) {
