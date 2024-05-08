@@ -14,15 +14,6 @@ public class Task {
         this.status = TaskStatus.NEW;
     }
 
-    public Task() {
-        /*
-        В комментариях ты указал, что не стоит создавать пустой конструктор. Но, почему-то, без его создания
-        Идея не позволяет мне сделать классы наследники. Не знаю почему, но выдаётся сообщение:
-        There is no parameterless constructor available in 'Tasks.Task'.
-        Поэтому я его и оставил.
-         */
-    }
-
     public String getName() {
         return name;
     }
