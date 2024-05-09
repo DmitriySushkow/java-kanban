@@ -130,12 +130,14 @@ public class TaskManager {
     }
 
     public void removeEpicByIdentifier(int id) {
-        epics.get(id).clearSubTasksIdList();
+        for (int subTaskId : epics.get(id).getSubTasksIdInThisEpic()) {
+            subTasks.remove(subTaskId);
+        }
         epics.remove(id);
         updateIdCounter();
     }
 
-    public void removeSubTaskByIdentifier(int id) {
+    public void removeSubTaskByIdentifier(Integer id) {
         Epic changedEpic = epics.get((subTasks.get(id)).getIdOfEpic());
         subTasks.remove(id);
         changedEpic.removeIdFromList(id);
